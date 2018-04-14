@@ -8,9 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { JqueryComponent } from './jquery/jquery.component';
 import { AngularComponent } from './angular/angular.component';
 import {RouterModule, Routes} from '@angular/router';
-import {MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {UserService} from './user.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const route: Routes = [
   {path: '', component: IndexComponent, children: [
@@ -34,15 +37,20 @@ const route: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot(route),
+    HttpClientModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
 
+
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

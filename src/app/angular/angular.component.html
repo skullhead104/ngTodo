@@ -1,3 +1,59 @@
-<p>
-  angular works!
-</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>My TODO'S :: angular</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <!--<form ngNativeValueValidate #myForm="bgForm" (submit)=""addTodo()">-->
+      <!--<mat-form-field fxFlex="4 1 auto">-->
+        <!--<input matInput placeholder="할일" [(ngModel)]="newTodo.todo">-->
+      <!--</mat-form-field>-->
+      <!--<button mat-raised-button color="primary" (click)="add_todo(this.newTodo)" fxFlex="1 1 auto" class="active">추가</button>-->
+    <!--</form>-->
+
+      <!--<mat-form-field fxFlex="4 1 auto">-->
+        <!--<input matInput placeholder="할일" [(ngModel)]="newTodo.todo">-->
+      <!--</mat-form-field>-->
+      <!--<button mat-raised-button color="primary" (click)="add_todo(this.newTodo)" fxFlex="1 1 auto" class="active">추가</button>-->
+
+    <form  (submit)="addTodo()" ngNativeValidate>
+      <div fxLayout="row">
+        <input type="text" placeholder="할일" id="input_todo" fxFlex="4 1 auto"
+               [(ngModel)]="newTodo.todo" required name="todo">
+        <button type="submit" fxFlex="1 1 auto" class="active">추가</button>
+      </div>
+    </form>
+
+
+
+
+    <div class="table" mt-2>
+      <div class="tr">
+        <div class="th">순번</div>
+        <div class="th">완료</div>
+        <div class="th">할일</div>
+        <div class="th">생성일</div>
+        <div class="th">수정일</div>
+        <div class="th">삭제</div>
+      </div>
+      <div class="tr" *ngFor="let todo of todoList">
+        <div class="td">{{todo.todo_id}}</div>
+        <div class="td">{{todo.isFinished ? '완료' : '미완료'}}</div>
+        <div class="td">{{todo.todo}}</div>
+        <div class="td">{{todo.created}}</div>
+        <div class="td">{{todo.updated}}</div>
+        <div class="td">
+          <button mat-raised-button color="warn">삭제</button>
+        </div>
+      </div>
+    </div>
+
+
+
+  </mat-card-content>
+
+</mat-card>
+
+
+
+<router-outlet></router-outlet>
