@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { JqueryComponent } from './jquery/jquery.component';
 import { AngularComponent } from './angular/angular.component';
 import {RouterModule, Routes} from '@angular/router';
-import {MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -38,7 +38,9 @@ const route: Routes = [
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+    MatCardModule,
     FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
