@@ -1,5 +1,20 @@
-@import "variable"; // 1.variable.css 찾기, 2. variable.scss 찾기, 3._variable.scss 찾기
+/*@import "variable"; // 1.variable.css 찾기, 2. variable.scss 찾기, 3._variable.scss 찾기
 // _variable ==> 의미)variable.css를 자동 생성하지 마라
 
 
-@import "material";
+@import "material";*/
+
+
+
+@import 'scss/fonts/NotoSansKR-Hestia';
+
+@import "scss/material.variables";
+@import "scss/material.themes";
+@import "scss/mixins/bi-app/bi-app-ltr";
+// Core Variables and Mixins
+@import "scss/app.variables";
+@import "scss/mixins";
+// Core Styles
+@import "scss/core";
+@import "scss/material";
+@import "scss/utilities/utilities";
